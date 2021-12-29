@@ -6,6 +6,7 @@ const nftMintingPrompts = require("./5-nft-minting");
 const tokenPrompts = require("./6-token");
 const tokenMintingPrompts = require("./7-token-minting");
 const tokenAirdropPrompts = require("./8-token-airdrop");
+const votePrompts = require("./9-vote");
 
 const properties = {
   ...sdkPrompts,
@@ -16,6 +17,7 @@ const properties = {
   ...tokenPrompts,
   ...tokenMintingPrompts,
   ...tokenAirdropPrompts,
+  ...votePrompts,
 };
 
 const stringProperties = Object.entries(properties)

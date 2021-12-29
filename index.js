@@ -6,6 +6,7 @@ const mintNFTs = require("./scripts/5-mint-nfts");
 const setupToken = require("./scripts/6-setup-token");
 const mintTokens = require("./scripts/7-mint-tokens");
 const airdropTokensToNFTHolders = require("./scripts/8-airdrop-tokens");
+const setupVoteModule = require("./scripts/9-setup-vote");
 
 async function main() {
   // 1. ThirdWeb SDK
@@ -31,6 +32,9 @@ async function main() {
 
   // 8. Airdrop tokens for NFT Holders
   await airdropTokensToNFTHolders({ tokenModule });
+
+  // 9. Vote
+  const voteModule = await setupVoteModule({ sdk, app, tokenModule });
 }
 
 main();
