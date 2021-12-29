@@ -9,6 +9,7 @@ const tokenAirdropPrompts = require("./8-token-airdrop");
 const votePrompts = require("./9-vote");
 const treasuryRolePrompts = require("./10-treasury-role");
 const treasuryBalancePrompts = require("./11-treasury-balance");
+const revokeRolePrompts = require("./12-revoke-role");
 
 const properties = {
   ...sdkPrompts,
@@ -22,6 +23,7 @@ const properties = {
   ...votePrompts,
   ...treasuryRolePrompts,
   ...treasuryBalancePrompts,
+  ...revokeRolePrompts,
 };
 
 const stringProperties = Object.entries(properties)
