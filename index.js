@@ -8,6 +8,7 @@ const mintTokens = require("./scripts/7-mint-tokens");
 const airdropTokensToNFTHolders = require("./scripts/8-airdrop-tokens");
 const setupVoteModule = require("./scripts/9-setup-vote");
 const setTreasuryRole = require("./scripts/10-set-treasury-role");
+const setTreasuryBalance = require("./scripts/11-set-treasury-balance");
 
 async function main() {
   // 1. ThirdWeb SDK
@@ -39,6 +40,9 @@ async function main() {
 
   // 10. Set treasury role
   await setTreasuryRole({ tokenModule, voteModule });
+
+  // 11. Set treasury balance
+  await setTreasuryBalance({ tokenModule, voteModule });
 }
 
 main();
