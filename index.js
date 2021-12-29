@@ -1,6 +1,7 @@
 const initializeSdk = require("./scripts/1-initialize-sdk");
 const getBundleDropModule = require("./scripts/2-bundle-drop");
 const setupNFT = require("./scripts/3-setup-nft");
+const setClaimConditions = require("./scripts/4-set-claim-conditions");
 
 async function main() {
   // 1. ThirdWeb SDK
@@ -11,6 +12,9 @@ async function main() {
 
   // 3. NFT
   await setupNFT({ bundleDropModule });
+
+  // 4. Set claim conditions
+  await setClaimConditions({ bundleDropModule });
 }
 
 main();

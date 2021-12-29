@@ -33,4 +33,15 @@ module.exports = {
   pressAnyKey: async function () {
     await prompt.get({ description: "Press any key to continue..." });
   },
+
+  getDate: async function (property, defaultValue = new Date()) {
+    const value = await this.get(property);
+
+    if (!value) {
+      return defaultValue;
+    }
+
+    const [year, month, day] = value.split(/[ /\-T]/g);
+    return new Date(year, month, day);
+  },
 };
