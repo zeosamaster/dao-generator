@@ -3,6 +3,7 @@ const minimist = require("minimist");
 
 module.exports = {
   properties: {},
+  history: {},
 
   start: function (promptProperties, stringKeys) {
     this.properties = promptProperties;
@@ -17,17 +18,27 @@ module.exports = {
       throw Error(`Property ${property} isn't configured for prompt`);
     }
 
+    if (this.history[property]) {
+      return this.history[property];
+    }
+
     const { [property]: value } = await prompt.get({
       ...this.properties[property],
       name: property,
     });
 
-    console.debug(
-      property,
-      !this.properties[property].hidden ? value : "******"
-    );
+    const parsedValue = this.properties[property].isArray
+      ? value.split(/[\s,]+/g)
+      : value;
 
-    return value;
+    // console.debug(
+    //   property,
+    //   !this.properties[property].hidden ? parsedValue : "******"
+    // );
+
+    this.history[property] = parsedValue;
+
+    return parsedValue;
   },
 
   pressAnyKey: async function () {
