@@ -4,6 +4,7 @@ const setupNFT = require("./scripts/3-setup-nft");
 const setClaimConditions = require("./scripts/4-set-claim-conditions");
 const mintNFTs = require("./scripts/5-mint-nfts");
 const setupToken = require("./scripts/6-setup-token");
+const mintTokens = require("./scripts/7-mint-tokens");
 
 async function main() {
   // 1. ThirdWeb SDK
@@ -23,6 +24,9 @@ async function main() {
 
   // 6. Token
   const tokenModule = await setupToken({ sdk, app });
+
+  // 7. Mint tokens
+  await mintTokens({ tokenModule });
 }
 
 main();
