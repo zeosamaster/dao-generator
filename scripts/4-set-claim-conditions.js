@@ -1,6 +1,10 @@
 const prompt = require("../utils/prompt");
 
 module.exports = async function setClaimConditions({ bundleDropModule }) {
+  console.log("");
+  console.log("-------");
+  console.log("Step 4 - Set claim conditions for ERC-1155 token");
+
   try {
     const shouldSetClaim = await prompt.get("shouldSetClaim");
     if (shouldSetClaim.toLowerCase() !== "y") {

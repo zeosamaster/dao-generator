@@ -3,6 +3,9 @@ const ethers = require("ethers");
 const prompt = require("../utils/prompt");
 
 module.exports = async function () {
+  console.log("-------");
+  console.log("Step 1 - Initialize thirdweb's sdk");
+
   try {
     const ownerPublicKey = await prompt.get("ownerPublicKey");
     if (!ownerPublicKey) {

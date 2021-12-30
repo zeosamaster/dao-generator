@@ -2,6 +2,10 @@ const { ethers } = require("ethers");
 const prompt = require("../utils/prompt");
 
 module.exports = async function airdropTokensToNFTHolders({ tokenModule }) {
+  console.log("");
+  console.log("-------");
+  console.log("Step 8 - Airdrop ERC-20 tokens");
+
   try {
     const shouldAirdropTokens = await prompt.get("shouldAirdropTokens");
     if (shouldAirdropTokens.toLowerCase() !== "y") {

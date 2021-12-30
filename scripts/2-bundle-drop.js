@@ -3,6 +3,10 @@ const prompt = require("../utils/prompt");
 const getImage = require("../utils/image");
 
 module.exports = async function getBundleDropModule({ sdk, app }) {
+  console.log("");
+  console.log("-------");
+  console.log("Step 2 - Setup Bundle Drop");
+
   try {
     const bundleDropAddress = await prompt.get("bundleDropAddress");
 

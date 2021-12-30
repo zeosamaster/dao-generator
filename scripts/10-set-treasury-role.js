@@ -1,6 +1,10 @@
 const prompt = require("../utils/prompt");
 
 module.exports = async function setTreasuryRole({ tokenModule, voteModule }) {
+  console.log("");
+  console.log("-------");
+  console.log("Step 10 - Enable ERC-20 minting by Treasury");
+
   try {
     const shouldSetTreasuryRole = await prompt.get("shouldSetTreasuryRole");
     if (shouldSetTreasuryRole.toLowerCase() !== "y") {

@@ -1,6 +1,10 @@
 const prompt = require("../utils/prompt");
 
 module.exports = async function setupVoteModule({ sdk, app, tokenModule }) {
+  console.log("");
+  console.log("-------");
+  console.log("Step 9 - Setup Governance & Treasury");
+
   try {
     const voteAddress = await prompt.get("voteAddress");
 

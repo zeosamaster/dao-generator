@@ -1,6 +1,10 @@
 const prompt = require("../utils/prompt");
 
 module.exports = async function mintNFTs({ bundleDropModule }) {
+  console.log("");
+  console.log("-------");
+  console.log("Step 5 - Mint ERC-1155 tokens");
+
   try {
     const shouldMintNFTs = await prompt.get("shouldMintNFTs");
     if (shouldMintNFTs.toLowerCase() !== "y") {

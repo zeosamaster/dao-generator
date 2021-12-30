@@ -2,6 +2,10 @@ const getImage = require("../utils/image");
 const prompt = require("../utils/prompt");
 
 module.exports = async function setupNFT({ bundleDropModule }) {
+  console.log("");
+  console.log("-------");
+  console.log("Step 3 - Setup ERC-1155 token");
+
   try {
     const shouldCreateNFT = await prompt.get("shouldCreateNFT");
     if (shouldCreateNFT.toLowerCase() !== "y") {

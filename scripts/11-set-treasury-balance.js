@@ -2,6 +2,10 @@ const { ethers } = require("ethers");
 const prompt = require("../utils/prompt");
 
 module.exports = async function setupTreasury({ tokenModule, voteModule }) {
+  console.log("");
+  console.log("-------");
+  console.log("Step 11 - Fund Treasury");
+
   try {
     const shouldSetTreasuryBalance = await prompt.get(
       "shouldSetTreasuryBalance"

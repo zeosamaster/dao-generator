@@ -1,6 +1,10 @@
 const prompt = require("../utils/prompt");
 
 module.exports = async function revokeCreatorRoles({ tokenModule }) {
+  console.log("");
+  console.log("-------");
+  console.log("Step 12 - Revoke roles for creator");
+
   try {
     const shouldRevokeCreatorRole = await prompt.get("shouldRevokeCreatorRole");
     if (shouldRevokeCreatorRole.toLowerCase() !== "y") {

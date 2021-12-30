@@ -1,6 +1,10 @@
 const prompt = require("../utils/prompt");
 
 module.exports = async function setupToken({ sdk, app }) {
+  console.log("");
+  console.log("-------");
+  console.log("Step 6 - Setup ERC-20 token");
+
   try {
     const tokenAddress = await prompt.get("tokenAddress");
 

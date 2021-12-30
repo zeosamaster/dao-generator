@@ -2,6 +2,10 @@ const { ethers } = require("ethers");
 const prompt = require("../utils/prompt");
 
 module.exports = async function mintTokens({ tokenModule }) {
+  console.log("");
+  console.log("-------");
+  console.log("Step 7 - Mint ERC-20 tokens");
+
   try {
     const shouldMintTokens = await prompt.get("shouldMintTokens");
     if (shouldMintTokens.toLowerCase() !== "y") {
